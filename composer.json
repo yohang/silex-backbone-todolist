@@ -1,0 +1,14 @@
+{
+    "autoload": {
+        "psr-0": {"Todo": "src/"}
+    },
+    "minimum-stability": "dev",
+    "require": {
+        "silex/silex": "1.0.*",
+        "twig/twig": ">=1.8,<2.0-dev",
+        "kriswallsmith/assetic": ">=1.0",
+        "fate/silex-extensions": "*",
+        "jms/twig-js": "*",
+        "doctrine/dbal": "2.2.*"
+    }
+}

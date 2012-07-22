@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Silex + Backbone.js - Beat it !</title>
+    <link rel="stylesheet" href="/css/styles.css"/>
+</head>
+<body>
+<div class="navbar">
+    <div class="navbar-inner">
+        <div class="container">
+            <a class="brand" href="#">Todo Manager</a>
+            <ul class="nav">
+                <li><a href="#/todo">Liste</a></li>
+                <li><a href="#/todo/add">Nouveau</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+{% block body %}{% endblock %}
+<script type="text/javascript" src="/js/scripts.js"></script>
+<script type="text/javascript" src="/js/templates.js"></script>
+</body>
+</html>

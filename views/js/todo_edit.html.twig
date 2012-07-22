@@ -1,0 +1,25 @@
+{% twig_js name="Todo.Template.Edit" %}
+<h1>Nouveau Todo</h1>
+<form class="form-horizontal">
+    <fieldset>
+
+        <div class="control-group">
+            <label for="title" class="control-label">Title</label>
+            <div class="controls">
+                <div class="input-prepend">
+                    <span class="add-on">
+                        <i class="icon-user"></i>
+                    </span>
+                    <input type="text" class="input-xlarge" id="title" value="{{ todo.title }}" />
+                    <p class="help-block">Le titre du todo</p>
+                </div>
+            </div>
+        </div>
+
+    </fieldset>
+
+    <div class="form-actions" id="form-actions">
+        <a class="btn save-btn">Enregistrer</a>
+        <a class="btn back-btn">Retour</a>
+    </div>
+</form>

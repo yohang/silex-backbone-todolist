@@ -1,0 +1,40 @@
+{% twig_js name="Todo.Template.TodoList" %}
+
+<div class="page-header">
+    <h1>Liste des todos</h1>
+</div>
+
+<table class="table" id="todo-list">
+    <thead>
+    <tr>
+        <th>Id</th>
+        <th>Titre</th>
+        <th>Terminer</th>
+        <th>Supprimer</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for todo in todos %}
+        <tr data-id="{{ todo.id }}">
+            <td><a href="#/todo/{{ todo.id }}">{{ todo.id }}</a></td>
+            <td><a href="#/todo/{{ todo.id }}">{{ todo.title }}</a></td>
+            <td>
+                {% if 0 == todo.is_finished %}
+                    <a class="btn btn-success finish">
+                        <i class="icon-check"></i> <span class="hide">Terminer</span>
+                    </a>
+                {% else %}
+                    Terminé
+                {% endif %}
+            </td>
+            <td>
+                <a class="btn btn-danger delete">
+                    <i class="icon-trash icon-white"></i> <span class="hide">Supprimer</span>
+                </a>
+            </td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+
+

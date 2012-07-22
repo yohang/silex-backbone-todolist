@@ -1,0 +1,4 @@
+cache/*
+vendor/*
+app.db
+!.gitkeep
