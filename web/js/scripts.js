@@ -11905,7 +11905,7 @@ var Todo = {
 Todo.Model.Todo = (function($) {
 
     return Backbone.Model.extend({
-        urlRoot: '/index_dev.php/api/todo',
+        urlRoot: '/api/todo',
         defaults: {
             id: null,
             title: '',
@@ -11919,7 +11919,7 @@ Todo.Collection.Todo = (function($) {
 
     return Backbone.Collection.extend({
         model: Todo.Model.Todo,
-        url: '/index_dev.php/api/todo',
+        url: '/api/todo',
         comparator: function(todo) {
             return todo.get('is_finished');
         }

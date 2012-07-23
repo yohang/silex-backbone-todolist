@@ -1,7 +1,7 @@
 Todo.Model.Todo = (function($) {
 
     return Backbone.Model.extend({
-        urlRoot: '/index_dev.php/api/todo',
+        urlRoot: '/api/todo',
         defaults: {
             id: null,
             title: '',
