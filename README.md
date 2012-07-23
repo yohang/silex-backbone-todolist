@@ -9,8 +9,7 @@ To run it, just install the dependencies and create the db :
 
  $ composer install
  $ sqlite3 app.db < sql/schema.sql
- $ sqlite3 app.db < sql/fixtures.sql
- $ cd web
- $ php -S
+ $ ./bin/console fixtures:load
+ $ ./bin/console server:run
 
 ```
