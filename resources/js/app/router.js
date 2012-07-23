@@ -9,16 +9,17 @@ Todo.Router = (function($) {
         },
 
         initialize: function() {
-
+            this.views = {};
         },
 
 
         index: function() {
-            (new Todo.View.Index).render();
+            this.views.index = this.views.index || new Todo.View.Index;
+            this.views.index.render();
         },
 
         showList: function() {
-            var view = new Todo.View.TodoList;
+            var view = this.views.list = this.views.list || new Todo.View.TodoList;
             view.collection.fetch({
                success: function() {
                    view.render();
@@ -46,7 +47,8 @@ Todo.Router = (function($) {
             var model, view;
 
             model = new Todo.Model.Todo({ id: id });
-            view = new Todo.View.TodoEdit({ model: model });
+            this.views.edit = view = this.views.edit || new Todo.View.TodoEdit({ model: model });
+            view.model = model;
 
             callback(model, view);
 

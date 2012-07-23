@@ -13,12 +13,8 @@ Todo.View.TodoList = (function($) {
         },
 
         render: function() {
-            var filter = function(todo) {
-                return 0 == todo.is_finished;
-            };
-
             $(this.el).html(Twig.render(Todo.Template.TodoList, {
-                todos: this.collection.toJSON()
+                todos: this.collection.sort().toJSON()
             }));
         },
 

@@ -11919,7 +11919,10 @@ Todo.Collection.Todo = (function($) {
 
     return Backbone.Collection.extend({
         model: Todo.Model.Todo,
-        url: '/index_dev.php/api/todo'
+        url: '/index_dev.php/api/todo',
+        comparator: function(todo) {
+            return todo.get('is_finished');
+        }
     });
 
 })(jQuery);
@@ -11970,6 +11973,8 @@ Todo.View.TodoEdit = (function($) {
                 title: title,
                 is_finished: isFinished
             }, {
+                silent  : false,
+                sync    : true,
                 success: function() {
                     this.model.trigger('save-success');
                 }.bind(this)
@@ -11994,12 +11999,8 @@ Todo.View.TodoList = (function($) {
         },
 
         render: function() {
-            var filter = function(todo) {
-                return 0 == todo.is_finished;
-            };
-
             $(this.el).html(Twig.render(Todo.Template.TodoList, {
-                todos: this.collection.toJSON()
+                todos: this.collection.sort().toJSON()
             }));
         },
 
@@ -12037,16 +12038,17 @@ Todo.Router = (function($) {
         },
 
         initialize: function() {
-
+            this.views = {};
         },
 
 
         index: function() {
-            (new Todo.View.Index).render();
+            this.views.index = this.views.index || new Todo.View.Index;
+            this.views.index.render();
         },
 
         showList: function() {
-            var view = new Todo.View.TodoList;
+            var view = this.views.list = this.views.list || new Todo.View.TodoList;
             view.collection.fetch({
                success: function() {
                    view.render();
@@ -12074,7 +12076,8 @@ Todo.Router = (function($) {
             var model, view;
 
             model = new Todo.Model.Todo({ id: id });
-            view = new Todo.View.TodoEdit({ model: model });
+            this.views.edit = view = this.views.edit || new Todo.View.TodoEdit({ model: model });
+            view.model = model;
 
             callback(model, view);
 
