@@ -9,6 +9,8 @@
         "kriswallsmith/assetic": ">=1.0",
         "fate/silex-extensions": "*",
         "jms/twig-js": "*",
-        "doctrine/dbal": "2.2.*"
+        "doctrine/dbal": "2.2.*",
+        "symfony/console": "2.1.*",
+        "symfony/yaml": "2.1.*"
     }
 }

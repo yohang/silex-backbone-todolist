@@ -1,0 +1,16 @@
+todo:
+    -
+        title: 'Le premier Todo'
+        is_finished: 1
+    -
+        title: 'Le second Todo'
+        is_finished: 0
+    -
+        title: 'Le troisième Todo'
+        is_finished: 0
+    -
+        title: 'Le quatrième Todo'
+        is_finished: 0
+    -
+        title: 'Le cinquième Todo'
+        is_finished: 0
