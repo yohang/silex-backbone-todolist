@@ -8,7 +8,7 @@ To run it, just install the dependencies and create the db :
 ```sh
 
  $ composer install
- $ sqlite3 app.db < sql/schema.sql
+ $ sqlite3 app.db < resources/sql/schema.sql
  $ ./bin/console fixtures:load
  $ ./bin/console server:run
 
