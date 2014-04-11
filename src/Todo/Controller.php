@@ -23,4 +23,3 @@ abstract class Controller
 
     abstract public function initialize();
 }
-

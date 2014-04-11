@@ -31,6 +31,4 @@ class Console extends BaseApplication
 
         return parent::doRun($input, $output);
     }
-
-
 }

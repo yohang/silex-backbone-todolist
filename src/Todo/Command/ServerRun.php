@@ -38,12 +38,13 @@ class ServerRun extends Command
                 )
             ))
             ->setDescription('Runs the project')
-            ->setHelp(<<<EOF
-    The <info>server:run</info> command runs the project using the PHP5.4+ builtin webserver
+            ->setHelp(
+                <<<EOF
+    The <info>server:run</info> command runs the project using the PHP 5.4+ built-in web server
 
     <info>bin/console server:run</info>
 EOF
-        );
+            );
     }
 
     /**

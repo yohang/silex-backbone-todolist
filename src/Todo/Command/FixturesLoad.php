@@ -24,12 +24,13 @@ class FixturesLoad extends Command
         $this
             ->setName('fixtures:load')
             ->setDescription('Runs the project')
-            ->setHelp(<<<EOF
-    The <info>fixtures:load</info> insert fixtures data into ypur database
+            ->setHelp(
+                <<<EOF
+    The <info>fixtures:load</info> insert fixtures data into your database
 
     <info>bin/console schema:create</info>
 EOF
-        );
+            );
     }
 
     /**
