@@ -24,10 +24,10 @@ $app->register(new AsseticExtension(), array(
     'assetic.options' => array(
         'debug' => $app['debug']
     ),
-    'assetic.filters' => $app->protect(function(\Assetic\FilterManager $fm) use ($app) {
+    'assetic.filters' => $app->protect(function (\Assetic\FilterManager $fm) use ($app) {
         //$fm->set('twig_js', $app['twig_js.assetic_filter']);
     }),
-    'assetic.assets' => $app->protect(function($am, $fm) use ($app) {
+    'assetic.assets' => $app->protect(function ($am, $fm) use ($app) {
         $am->set('styles', new Assetic\Asset\AssetCache(
             new Assetic\Asset\GlobAsset($app['assetic.input.path_to_css']),
             new Assetic\Cache\FilesystemCache($app['assetic.path_to_cache'])

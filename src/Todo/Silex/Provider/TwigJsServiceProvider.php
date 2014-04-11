@@ -24,14 +24,14 @@ class TwigJsServiceProvider implements ServiceProviderInterface
      */
     public function register(Application $app)
     {
-        $app['twig_js.compile_request_handler'] = $app->share(function($app) {
+        $app['twig_js.compile_request_handler'] = $app->share(function ($app) {
             return new CompileRequestHandler($app['twig'], $app['twig_js.compiler']);
         });
 
-        $app['twig_js.compiler'] = $app->share(function($app) {
+        $app['twig_js.compiler'] = $app->share(function ($app) {
             return new JsCompiler($app['twig']);
         });
-        $app['twig_js.twig_extension'] = $app->share(function() {
+        $app['twig_js.twig_extension'] = $app->share(function () {
             return new TwigJsExtension();
         });
     }
@@ -61,5 +61,4 @@ class TwigJsServiceProvider implements ServiceProviderInterface
         }
         $app['twig']->addExtension($app['twig_js.twig_extension']);
     }
-
 }
